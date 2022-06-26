@@ -22,19 +22,32 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css"
+    />
     <link rel="stylesheet" href="css/style.min.css" />
     <link rel="shortcut icon" href="img/logo-icon.ico" type="image/x-icon" />
     <title>Lex Media</title>
   </head>
-  <body>
+  <body onload="init()">
+    <div
+      id="preloader"
+      class="justify-content-center align-items-center w-100 h-100"
+    >
+      <img src="img/loading.svg" alt="loader" />
+    </div>
     <!-- NAVBAR -->
     <nav
-      class="navbar navbar-expand-lg navbar-light bg-light position-fixed w-100"
+      class="navbar navbar-expand-lg navbar-light position-fixed w-100 border-0"
       id="navbar"
     >
       <div class="container-fluid w-md-75 w-100">
-        <div class="filler"></div>
-        <a class="navbar-brand logo-font" href="#">lex media</a>
+        <!-- <div class="filler"></div> -->
+        <a class="navbar-brand logo-font text-white" href="#">
+          <!-- <img src="img/logo-text.png" width="200px" alt="logo" /> -->
+          Lex Media
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -167,7 +180,10 @@
           data-bs-target="#carouselExampleControls"
           data-bs-slide="prev"
         >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span
+            class="carousel-control-prev-icon d-sm-block d-none"
+            aria-hidden="true"
+          ></span>
           <span class="visually-hidden">Previous</span>
         </button>
         <button
@@ -176,7 +192,10 @@
           data-bs-target="#carouselExampleControls"
           data-bs-slide="next"
         >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span
+            class="carousel-control-next-icon d-sm-block d-none"
+            aria-hidden="true"
+          ></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
@@ -204,7 +223,7 @@
       <div class="container-fluid">
         <div class="row py-5">
           <div
-            class="col-lg-4 col-md-12 d-flex mb-lg-0 mb-md-3 justify-content-start align-items-center"
+            class="col-lg-4 col-md-12 d-flex mb-lg-0 mb-md-3 p-0 justify-content-start align-items-center"
           >
             <div class="services-display">
               <h6 class="text-muted small text-uppercase logo-font">
@@ -285,7 +304,7 @@
       <div class="container-fluid">
         <div class="row">
           <div
-            class="col-sm-6 p-lg-5 p-md-0 bg-dark d-flex justify-content-center align-items-center"
+            class="col-sm-6 bg-dark d-flex justify-content-center p-lg-5 p-md-0 align-items-center"
           >
             <div class="about-text p-5 px-sm-5 px-0">
               <h6 class="text-muted small text-uppercase logo-font">
@@ -312,7 +331,7 @@
               </p>
             </div>
           </div>
-          <div class="col-sm-6 p-0 about-img img-1">
+          <div class="col-sm-6 about-img img-1">
             <!-- <img src="img/about-1.jpg" alt="about" class="img-fluid"> -->
           </div>
         </div>
@@ -321,7 +340,7 @@
             <!-- <img src="img/about-1.jpg" alt="about" class="img-fluid"> -->
           </div>
           <div
-            class="col-sm-6 p-lg-5 p-md-0 bg-light d-flex justify-content-center align-items-center"
+            class="col-sm-6 bg-light p-lg-5 p-md-0 d-flex justify-content-center align-items-center"
           >
             <div class="about-text p-5 px-sm-5 px-0">
               <h6 class="text-muted small text-uppercase logo-font">
@@ -449,7 +468,7 @@
             </div>
           </div>
           <div class="col-sm-3 p-0">
-            <div class="gallery-img-wrap">
+            <div class="gallery-img-wrap" id="gallery-1">
               <img src="img/cover-3.jpg" alt="gallery img" />
               <div class="gallery-img-text">
                 <div>
@@ -573,6 +592,221 @@
         </div>
       </div>
     </div>
+    <!-- TEAM -->
+    <div id="team">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="p-0 col-sm-4 position-relative team-img-wrap">
+            <img src="img/team-3.jpg" alt="team member" class="img-fluid" />
+            <div class="team-img-overlay">
+              <div class="team-img-text fade-in-top-1">
+                <h3 class="text-white display-font text-center">Zarko Jovic</h3>
+                <p class="primary-font text-white text-center fw-bold">
+                  Web Designer
+                </p>
+                <p class="text-center">
+                  <a href="#" class="text-white text-decoration-none mx-2">
+                    <span class="iconify" data-icon="cib:instagram"></span>
+                  </a>
+                  <a href="#" class="text-white text-decoration-none mx-2">
+                    <span class="iconify" data-icon="ps:facebook-alt"></span>
+                  </a>
+                  <a href="#" class="text-white text-decoration-none mx-2"
+                    ><span
+                      class="iconify"
+                      data-icon="fa-brands:linkedin"
+                    ></span>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="p-0 col-sm-4 position-relative team-img-wrap">
+            <img src="img/team-1a.png" alt="team member" class="img-fluid" />
+            <div class="team-img-overlay">
+              <div class="team-img-text fade-in-top-1">
+                <h3 class="text-white display-font text-center">
+                  Ognjen Stamenic
+                </h3>
+                <p class="primary-font text-white text-center fw-bold">
+                  Video Maker
+                </p>
+                <p class="text-center">
+                  <a href="#" class="text-white text-decoration-none mx-2">
+                    <span class="iconify" data-icon="cib:instagram"></span>
+                  </a>
+                  <a href="#" class="text-white text-decoration-none mx-2">
+                    <span class="iconify" data-icon="ps:facebook-alt"></span>
+                  </a>
+                  <a href="#" class="text-white text-decoration-none mx-2"
+                    ><span
+                      class="iconify"
+                      data-icon="fa-brands:linkedin"
+                    ></span>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="p-0 col-sm-4 position-relative team-img-wrap">
+            <img
+              src="img/team-2.jpg"
+              alt="team member"
+              class="img-fluid w-100"
+            />
+            <div class="team-img-overlay">
+              <div class="team-img-text fade-in-top-1">
+                <h3 class="text-white display-font text-center">
+                  Srdjan Rankovic
+                </h3>
+                <p class="primary-font text-white text-center fw-bold">
+                  CEO & Manager
+                </p>
+                <p class="text-center">
+                  <a href="#" class="text-white text-decoration-none mx-2">
+                    <span class="iconify" data-icon="cib:instagram"></span>
+                  </a>
+                  <a href="#" class="text-white text-decoration-none mx-2">
+                    <span class="iconify" data-icon="ps:facebook-alt"></span>
+                  </a>
+                  <a href="#" class="text-white text-decoration-none mx-2"
+                    ><span
+                      class="iconify"
+                      data-icon="fa-brands:linkedin"
+                    ></span>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- PARTNERS -->
+    <div id="partners">
+      <div class="container-fluid">
+        <div class="owl-carousel owl-theme d-flex align-items-center">
+          <div class="item">
+            <img src="img/partner-11.jpg" alt="partner" />
+          </div>
+          <div class="item"><img src="img/partner-2.jpg" alt="partner" /></div>
+          <div class="item"><img src="img/partner-3.jpg" alt="partner" /></div>
+          <div class="item"><img src="img/partner-4.jpg" alt="partner" /></div>
+          <div class="item"><img src="img/partner-10.png" alt="partner" /></div>
+          <div class="item"><img src="img/partner-6.jpg" alt="partner" /></div>
+          <div class="item"><img src="img/Untitled-1.png" alt="partner" /></div>
+          <div class="item"><img src="img/partner-9.jpg" alt="partner" /></div>
+          <!-- <div class="item"><img src="img/partner-11.jpg" alt="partner" /></div> -->
+        </div>
+      </div>
+    </div>
+    <!-- FOOTER -->
+    <footer class="gray-bg pt-4">
+      <div class="container">
+        <div class="row py-3">
+          <div class="col-sm-3">
+            <!-- <h5 class="text-white primary-font fw-bold">Lex Media</h5> -->
+            <img src="img/logo-icon.png" alt="logo" width="50px" />
+            <p class="text-muted primary-font mt-4 small">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Veritatis, reprehenderit.
+            </p>
+          </div>
+          <div class="col-sm-3">
+            <h6
+              class="primary-font text-white text-uppercase logo-font mb-sm-4 mt-sm-0 mb-3 mt-4"
+            >
+              Useful Links
+            </h6>
+            <p class="primary-font text-muted small p-0 m-0 pt-2">
+              <a href="#" class="text-decoration-none text-muted"> Home </a>
+            </p>
+            <p class="primary-font text-muted small m-0 mt-2">
+              <a href="#" class="text-decoration-none text-muted"> About </a>
+            </p>
+            <p class="primary-font text-muted small m-0 mt-2">
+              <a href="#" class="text-decoration-none text-muted">
+                Portfolio
+              </a>
+            </p>
+          </div>
+          <div class="col-sm-3">
+            <h6
+              class="primary-font text-white text-uppercase logo-font mb-sm-4 mt-sm-0 mb-3 mt-4"
+            >
+              Information
+            </h6>
+            <p class="primary-font text-muted small p-0 m-0 pt-2">
+              <a href="#" class="text-decoration-none text-muted">
+                <span
+                  class="iconify-inline fs-6 me-2"
+                  data-icon="fa6-solid:house"
+                ></span>
+                Vojvode Mišića 224
+              </a>
+            </p>
+            <p class="primary-font text-muted small p-0 m-0 mt-3">
+              <a href="#" class="text-decoration-none text-muted">
+                <span
+                  class="iconify-inline fs-6 me-2"
+                  data-icon="fa6-solid:envelope"
+                ></span>
+                office@lexmedia.rs
+              </a>
+            </p>
+            <p class="primary-font text-muted small p-0 m-0 mt-3">
+              <a href="#" class="text-decoration-none text-muted">
+                <span
+                  class="iconify-inline fs-6 me-2"
+                  data-icon="carbon:phone-filled"
+                ></span
+                >+381 64/4545-053
+              </a>
+            </p>
+          </div>
+          <div class="col-sm-3">
+            <h6
+              class="primary-font text-white text-uppercase mb-sm-4 mt-sm-0 mb-3 mt-4 logo-font"
+            >
+              Social Media
+            </h6>
+
+            <p class="primary-font text-muted small p-0 m-0 pt-2">
+              <a href="#" class="text-decoration-none text-muted">
+                <span
+                  class="iconify-inline fs-6 me-2"
+                  data-icon="foundation:social-facebook"
+                ></span
+                >Facebook
+              </a>
+            </p>
+            <p class="primary-font text-muted small p-0 m-0 mt-3">
+              <a href="#" class="text-decoration-none text-muted">
+                <span
+                  class="iconify-inline fs-6 me-2"
+                  data-icon="fa:youtube"
+                ></span
+                >Youtube
+              </a>
+            </p>
+            <p class="primary-font text-muted small p-0 m-0 mt-3">
+              <a href="#" class="text-decoration-none text-muted">
+                <span
+                  class="iconify-inline fs-6 me-2"
+                  data-icon="akar-icons:instagram-fill"
+                ></span>
+                Instagram
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <p
+        class="text-center text-white primary-font border-top bg-black py-3 small m-0 mt-4"
+      >
+        © 2016 Qode Interactive, All Rights Reserved
+      </p>
+    </footer>
     <!-- Iconify Design -->
     <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
     <!-- Boostrap 5 JS -->
@@ -592,8 +826,35 @@
       crossorigin="anonymous"
     ></script>
     <script src="/assets/scripts/countUp.umd.js"></script>
+    <script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
     <script src="/assets/scripts/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
+
     <script>
+      SmoothScroll({
+        // Scrolling Core
+        animationTime: 1500, // [ms]
+        stepSize: 50, // [px]
+
+        // Acceleration
+        accelerationDelta: 50, // 50
+        accelerationMax: 2, // 3
+
+        // Keyboard Settings
+        keyboardSupport: true, // option
+        arrowScroll: 50, // [px]
+
+        // Pulse (less tweakable)
+        // ratio of "tail" to "acceleration"
+        pulseAlgorithm: true,
+        pulseScale: 4,
+        pulseNormalize: 1,
+
+        // Other
+        touchpadSupport: false, // ignore touchpad by default
+        fixedBackground: true,
+        excluded: "",
+      });
       /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
       var prevScrollpos = window.pageYOffset;
       window.onscroll = function () {
@@ -605,17 +866,41 @@
         }
         prevScrollpos = currentScrollPos;
       };
+      $(window).on("load", function () {
+        $("#preloader").fadeOut();
+        $("#preloader").addClass("opacity-0", 2500);
+
+        // $("#transition").fadeOut();
+      });
       const c = new countUp.CountUp("stat-1", 52);
       // c.start();
       const d = new countUp.CountUp("stat-2", 60);
       // d.start();
       const e = new countUp.CountUp("stat-3", 170);
       // e.start();
-      var $test = $("#gallery");
+      var $test = $("#gallery-1");
       $test.waypoint(function () {
         c.start();
         d.start();
         e.start();
+      });
+      $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 10,
+        autoplay: 1000,
+        // nav: true,
+        dots: false,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          600: {
+            items: 3,
+          },
+          1000: {
+            items: 5,
+          },
+        },
       });
     </script>
   </body>
